@@ -1,0 +1,6 @@
+sort(): 0.000542 seconds
+insertion_sort(): 0.020977 seconds
+sort(): 0.006992 seconds
+insertion_sort(): 1.23384 seconds
+sort(): 0.049793 seconds
+insertion_sort(): 119.397 seconds
