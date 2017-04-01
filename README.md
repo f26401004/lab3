@@ -4,16 +4,18 @@ How to compile the program for question B:
 	make lab3_B
 -
 The discussion of question B:
-	the data recorded in the B_record.out are n = 1000, n = 10000, and n = 100000. The process will carry out for 1000*1000, 10000*10000, 100000*100000 at least respectively.
+	the data recorded in the B_record.out are n = 1000, n = 10000, and n = 100000. The process will carry out for 1000*1000, 10000*10000, 100000*100000, 1000000*1000000 at least respectively.
 
 	(1) Insertion sort : belong to O(n^2)
-		n = 1000  , insertion_sort(): 0.020977 seconds
-		n = 10000 , insertion_sort(): 1.23384 seconds
-		n = 100000, insertion_sort(): 119.397 seconds 
+		n = 1000   , insertion_sort(): 0.020977 seconds
+		n = 10000  , insertion_sort(): 1.23384 seconds
+		n = 100000 , insertion_sort(): 119.397 seconds 
+		n = 1000000, insertion_sort(): 10799 seconds
 	(2) Sort in the algorithm header file : belong to O(nlogn)
-		n = 1000  , sort(): 0.000542 seconds
-		n = 10000 , sort(): 0.006992 seconds
-		n = 100000, sort(): 0.049793 seconds 
+		n = 1000   , sort(): 0.000542 seconds
+		n = 10000  , sort(): 0.006992 seconds
+		n = 100000 , sort(): 0.049793 seconds 
+		n = 1000000, sort(): 0.424233 seconds
 
 	It is obvious that Sort in the algorithm header file is more effective than Insertion sort, and considered about the CPU clock timing unit that generates, we can compute a approximate ratio that the two different sort process takes.
 	Suppose that the clock rate of a computer is 1 G 
@@ -28,4 +30,10 @@ The discussion of question B:
         when n = 100000:
                 Insertion_sort(): (100000 * 100000) / 10^9 / 10^3 = 10^(-2)
                 Sort(): (100000 * log100000) / 10^9 / 10^3 = 10^(-6)
-		10^(-2) / 10^(-6) = 10000 (times)		
+		10^(-2) / 10^(-6) = 10000 (times)
+	when n = 1000000:
+                Insertion_sort(): (1000000 * 1000000) / 10^9 / 10^3 = 10
+                Sort(): (1000000 * log1000000) / 10^9 / 10^3 = 10^(-5)
+                10^(-2) / 10^(-6) = 1000000 (times)
+
+	the above mentioned data are all approximate equal to the ratio of the real data.
